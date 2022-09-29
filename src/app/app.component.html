@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+      Formulario de consulta
+    </div>
+    <div class="card-body">
+        <form class="form-inline" >
+            
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="txtcedula" class="sr-only">Ingresa datos</label>
+              <input type="text" [(ngModel)]="txtcedula" name="txtcedula" class="form-control" id="txtcedula" placeholder="Ingresa cédula">
+            </div>
+            <button type="button"  (click)="ConsultarDatos()" class="btn btn-primary mb-2">Consultar Datos</button>
+          </form>
+    </div>
+  </div>
+
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Cedula</th>
+        <th scope="col">Nombre Completo</th>
+        <th scope="col">Fecha Pago</th>
+        <th scope="col">Monto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let listCliente of ListDataClient">        
+        <td>{{listCliente.cedula}}</td>
+        <td>{{listCliente.nombre_Completo}}</td>
+        <td>{{listCliente.fecha_pago}}</td>
+        <td>{{listCliente.monto}}</td>
+      </tr>
+     
+    </tbody>
+  </table>
